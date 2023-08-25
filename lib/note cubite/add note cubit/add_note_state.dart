@@ -7,7 +7,7 @@ abstract class AddNoteState {}
   class AddNoteLoading extends AddNoteState {}
    class AddNoteSuccess extends AddNoteState {}
     class AddNoteFailure extends AddNoteState {
- String errmessage;
+ final   String errmessage;
 
 AddNoteFailure(this.errmessage);
 
