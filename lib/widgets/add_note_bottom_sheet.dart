@@ -15,7 +15,7 @@ class AddnotelBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return   BlocProvider(
-      create: (context)=>AddNoteCubit(),
+      create:  (context)=> AddNoteCubit(),
       child: Padding(
         padding:  const EdgeInsets.symmetric(horizontal: 16),
         child: BlocConsumer<AddNoteCubit,AddNoteState>(

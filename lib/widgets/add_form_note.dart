@@ -34,7 +34,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
             height: 32,
           ),
           CustomTextFormField(
-            
+            onsaved: (value){
+            title =value ;
+          },
             
             hint: 'Title',
          
@@ -42,30 +44,35 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const  SizedBox(height: 16,),
           CustomTextFormField(
              onsaved: (value){
-            title =value ;
+           subtitle =value ;
           },
             
             hint: 'content',maxLines: 5,
          
           ),
           const SizedBox(height: 40,),
-          CustomButton(
-          ontap: (){
-
-if(formkey.currentState!.validate()){
-  formkey.currentState!.save();
-  var noteBox =NoteModel(  title:  '0'  ,subtitle: '1', color: Colors.blue.value, date: DateTime.now().toString());
-  BlocProvider.of<AddNoteCubit>(context).addnote(noteBox);
-}else{
-   autovalidateMode =AutovalidateMode.always;
-  setState(() {
-    
-  });
-}
-
-          },
           
-          )
+         
+              CustomButton(
+            ontap: (){
+          
+          if(formkey.currentState!.validate()){
+            formkey.currentState!.save();
+            var noteBox =NoteModel(  title:  ''  ,subTitle: '', color: Colors.blue.value, date: DateTime.now().toString());
+            BlocProvider.of<AddNoteCubit>(context).addnote(noteBox);
+          }else{
+             autovalidateMode =AutovalidateMode.always;
+            setState(() {
+              
+            });
+          }
+          
+            },
+            
+            )
+           
+            
+          
         ],
       ),
     );
