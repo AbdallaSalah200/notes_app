@@ -10,8 +10,8 @@ final IconData icon ;
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(title,style: TextStyle(fontSize: 32),),
-        Spacer(),
+        Text(title,style: const TextStyle(fontSize: 32),),
+      const   Spacer(),
 CustomIconSearch(
   onPressed: onPressed,
   icon: icon,),

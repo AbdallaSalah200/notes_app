@@ -21,7 +21,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children:  [
-          SizedBox(
+        const   SizedBox(
             height: 50,
           ),
           CustomAppBar(
@@ -43,7 +43,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             onchange: (value){
           title = value;   
             },
-            hint: 'title'),
+            hint: widget.note.title),
           const  SizedBox(
             height: 16,
           ),
@@ -52,7 +52,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             content =value ;
             },
             
-            hint: 'content',maxLines: 5,),
+            hint: widget.note.subTitle,maxLines: 5,),
         ],
       ),
     );
